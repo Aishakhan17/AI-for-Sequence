@@ -1,20 +1,40 @@
-# Sequence 
+# Sequence-AI
 
-Sequence is an abstract strategy board-and-card game.
+This repository builds upon the original [heksadecimal/sequence](https://github.com/heksadecimal/sequence) project.  
+All AI development and recent changes are by [Aishakhan17](https://github.com/Aishakhan17).
+
+Sequence is an abstract strategy board-and-card game. This game extends it with custom AI agents that can play the game intelligently. The goal is to explore and implement various AI strategies such as Minimax, Monte Carlo Tree Search (MCTS) and a Minimax-MCTS hybrid. The stretch goal is to use Monte Carlo
+
+Sequence is a multiplayer board-and-card game that blends elements of strategy, memory, and chance.
 
 ## Requirements
 
-Use the package manager pip to install following packages :-
+Create a virtual environment before installing any dependencies:
 
-- Pyqt6
+-   Create Virtual Environment
+
 ```bash
-pip install pyqt6
+python3 -m venv env_name
 ```
 
-- Pyqt6-charts
+-   Activate Virtual Environment
+    On Ubuntu
+
 ```bash
-pip install pyqt6-charts
+source env_name/bin/activate
 ```
+
+    On Windows
+
+```bash
+source env_name\Scripts\activate
+```
+
+Install all dependencies using:
+
+````bash
+pip install -r requirements.txt
+
 
 ## How to play
 
@@ -23,29 +43,16 @@ After following the above steps, you can first move to the src directory and the
 ```bash
 cd src/
 python main.py
-```
-
+````
 
 ### Game Rules
 
-- Each card is pictured twice on the game board, and Jacks (while necessary for game strategy) do not appear on the board.
+-   Each card is pictured **twice** on the game board (except Jacks).
+-   Players place chips on spaces that match the cards in their hands.
+-   **Two-eyed Jacks** are wild (can place anywhere), **one-eyed Jacks** remove opponent chips.
+-   **Goal**: Form sequences of five connected chips (horizontally, vertically, or diagonally).
+-   **Free corners** can be used by any player as part of a sequence.
 
-- The player chooses a card from their hand, and places a chip on one of the corresponding spaces of the game board (Example: they choose Ace of Diamonds from their hand and place a chip on the Ace of Diamonds on the board). 
+### Winning
 
-- Jacks have special powers.
-
-- Two-Eyed Jacks can represent any card and may be used to place a chip on any open space on the board.
-
-- One-Eyed Jacks can remove an opponent's token from a space.
-
-### Strategy
-
-- Each corner of the board has a "Free" space that all players can use to their advantage. This space acts as if it has a chip of each color on it at all times. 
-
-- To form rows, chips may be placed vertically, horizontally or diagonally. Each complete row of five (or four and a free corner space) is counted as a sequence. Sequences of the same color may intersect, but only at a single position. 
-
-### Winning 
-
-- The game ends when a player complete a sequence of five cards. Cheers!
-
-
+-   The game ends when a player complete a sequence of five cards. Cheers!

@@ -24,8 +24,8 @@ class Main:
         self.closeDialog = QDialog(self.window)
         self.closeDialog.setWindowTitle("Quit Sequece")
         self.closeDialog.setGeometry(
-            0.4 * self.window.geometry().width(),
-            0.4 * self.window.geometry().height(),
+            int(0.4 * self.window.geometry().width()),
+            int(0.4 * self.window.geometry().height()),
             500,
             200,
         )
@@ -33,8 +33,8 @@ class Main:
 
         self.quitLabel = QLabel(self.closeDialog)
         self.quitLabel.setGeometry(
-            self.quitLabel.geometry().x() + 100,
-            self.quitLabel.geometry().y() + 10,
+            int(self.quitLabel.geometry().x() + 100),
+            int(self.quitLabel.geometry().y() + 10),
             300,
             100,
         )
